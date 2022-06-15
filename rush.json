@@ -470,5 +470,12 @@
     //   "reviewCategory": "tools",
     //   "tags": ["tools"]
     // }
+
+    {
+      "packageName": "backend",
+      "projectFolder": "services/backend",
+      "reviewCategory": "production",
+      "tags": ["services"]
+    }
   ]
 }
