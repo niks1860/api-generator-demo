@@ -166,6 +166,16 @@
     //    */
     //   // "autoinstallerName": "my-task"
     // }
+
+    {
+      "name": "prettier",
+      "commandKind": "global",
+      "summary": "Used by the pre-coomit Git hook to invoke prttier to reformat staged changes",
+      "safeForSimultaneousRushProcesses": true,
+      
+      "autoinstallerName": "rush-prettier",
+      "shellCommand": "pretty-quick --staged"
+    }
   ],
 
   /**
