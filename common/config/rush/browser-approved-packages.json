@@ -1,0 +1,50 @@
+// DO NOT ADD COMMENTS IN THIS FILE.  They will be lost when the Rush tool resaves it.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
+  "packages": [
+    {
+      "name": "@loopback/boot",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@loopback/core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@loopback/rest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@loopback/rest-explorer",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@loopback/testlab",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "mocha",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "rimraf",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "source-map-support",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "tslib",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "typescript",
+      "allowedCategories": [ "production" ]
+    }
+  ]
+}
