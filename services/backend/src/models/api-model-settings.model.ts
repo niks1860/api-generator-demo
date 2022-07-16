@@ -1,7 +1,18 @@
-import { Model, model, property } from '@loopback/repository';
+import { Entity, Model, model, property } from '@loopback/repository';
 
-@model()
-export class ApiModelSettings extends Model {
+/**
+ * This model represents settings of a domain model
+ */
+@model({ settings: { strict: false } })
+export class ApiModelSettings extends Entity {
+  @property({
+    type: 'string',
+    id: true,
+    generated: true,
+    useDefaultIdType: true
+  })
+  id: string;
+
   @property({
     type: 'string',
     jsonSchema: {
