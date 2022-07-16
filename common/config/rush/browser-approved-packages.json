@@ -11,6 +11,10 @@
       "allowedCategories": [ "production" ]
     },
     {
+      "name": "@loopback/repository",
+      "allowedCategories": [ "production" ]
+    },
+    {
       "name": "@loopback/rest",
       "allowedCategories": [ "production" ]
     },
@@ -24,6 +28,10 @@
     },
     {
       "name": "jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "loopback-connector-mongodb",
       "allowedCategories": [ "production" ]
     },
     {

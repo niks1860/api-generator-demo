@@ -9,6 +9,7 @@ importers:
     specifiers:
       '@loopback/boot': ^5.0.1
       '@loopback/core': ^4.0.1
+      '@loopback/repository': ^5.0.1
       '@loopback/rest': ^12.0.1
       '@loopback/rest-explorer': ^5.0.1
       '@loopback/testlab': ^5.0.1
@@ -16,6 +17,7 @@ importers:
       '@types/mocha': ^9.1.1
       '@types/node': ^14.18.21
       jest: ^28.1.1
+      loopback-connector-mongodb: ^5.6.0
       mocha: ^10.0.0
       rimraf: ^3.0.2
       source-map-support: ^0.5.21
@@ -24,8 +26,10 @@ importers:
     dependencies:
       '@loopback/boot': 5.0.1_@loopback+core@4.0.1
       '@loopback/core': 4.0.1
+      '@loopback/repository': 5.0.1_@loopback+core@4.0.1
       '@loopback/rest': 12.0.1_3ckyp6h4mpl6nczriqmo7shltm
       '@loopback/rest-explorer': 5.0.1_5prsmgnbkvzxhn5j6myvrbnoi4
+      loopback-connector-mongodb: 5.6.0
       tslib: 2.4.0
     devDependencies:
       '@loopback/testlab': 5.0.1
@@ -1434,6 +1438,11 @@ packages:
       node-int64: 0.4.0
     dev: true
 
+  /bson/1.1.6:
+    resolution: {integrity: sha512-EvVNVeGo4tHxwi8L6bPj3y3itEvStdwvvlojVxxbyYfoaxJ6keLgrTuKdyfEAszFK+H3olzBuafE0yoh0D1gdg==}
+    engines: {node: '>=0.6.19'}
+    dev: false
+
   /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: true
@@ -1716,6 +1725,11 @@ packages:
     resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
     engines: {node: '>=0.4.0'}
     dev: true
+
+  /denque/1.5.1:
+    resolution: {integrity: sha512-XwE+iZ4D6ZUB7mfYRMb5wByE8L74HCn30FBN7sWnXksWc1LO1bPDl67pBR9o/kC4z/xSNAwkMYcGgqDV3BE3Hw==}
+    engines: {node: '>=0.10'}
+    dev: false
 
   /depd/2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
@@ -2922,6 +2936,26 @@ packages:
       is-unicode-supported: 0.1.0
     dev: true
 
+  /loopback-connector-mongodb/5.6.0:
+    resolution: {integrity: sha512-mhuOUknJkmZhr9BhJCUz3ggRuFKNZuU1tkZrwqUxwosAUPWeZMIdrj7XP9Vr6OCP6+RfZoSRMITj3keAOPTKrg==}
+    engines: {node: '>=10'}
+    dependencies:
+      async: 3.2.4
+      bson: 1.1.6
+      debug: 4.3.4
+      loopback-connector: 5.0.1
+      mongodb: 3.7.3
+      strong-globalize: 6.0.5
+    transitivePeerDependencies:
+      - aws4
+      - bson-ext
+      - kerberos
+      - mongodb-client-encryption
+      - mongodb-extjson
+      - snappy
+      - supports-color
+    dev: false
+
   /loopback-connector/5.0.1:
     resolution: {integrity: sha512-aSPT6x5WZdoW9ylyNE4CxGqFbIqC9cSEZJwWkCincso27PXlZPj52POoF6pgxug9mkH7MrbXuP3SSDLkLq5oQQ==}
     engines: {node: '>=10'}
@@ -3010,6 +3044,11 @@ packages:
       mimic-fn: 2.1.0
       p-is-promise: 2.1.0
     dev: false
+
+  /memory-pager/1.5.0:
+    resolution: {integrity: sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg==}
+    dev: false
+    optional: true
 
   /merge-descriptors/1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
@@ -3107,6 +3146,39 @@ packages:
       yargs-parser: 20.2.4
       yargs-unparser: 2.0.0
     dev: true
+
+  /mongodb/3.7.3:
+    resolution: {integrity: sha512-Psm+g3/wHXhjBEktkxXsFMZvd3nemI0r3IPsE0bU+4//PnvNWKkzhZcEsbPcYiWqe8XqXJJEg4Tgtr7Raw67Yw==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      aws4: '*'
+      bson-ext: '*'
+      kerberos: '*'
+      mongodb-client-encryption: '*'
+      mongodb-extjson: '*'
+      snappy: '*'
+    peerDependenciesMeta:
+      aws4:
+        optional: true
+      bson-ext:
+        optional: true
+      kerberos:
+        optional: true
+      mongodb-client-encryption:
+        optional: true
+      mongodb-extjson:
+        optional: true
+      snappy:
+        optional: true
+    dependencies:
+      bl: 2.2.1
+      bson: 1.1.6
+      denque: 1.5.1
+      optional-require: 1.1.8
+      safe-buffer: 5.2.1
+    optionalDependencies:
+      saslprep: 1.0.3
+    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
@@ -3260,6 +3332,13 @@ packages:
     resolution: {integrity: sha512-TxhYBMoqx9frXyOgnRHufjQfPXomTIHYKhSKJ6jHfj13kS8OEIhvmE8CTuQyKtjjWttAjX5DPxM1vmalEpo8Qw==}
     dependencies:
       yaml: 1.10.2
+    dev: false
+
+  /optional-require/1.1.8:
+    resolution: {integrity: sha512-jq83qaUb0wNg9Krv1c5OQ+58EK+vHde6aBPzLvPPqJm89UQWsvSuFy9X/OSNJnFeSOKo7btE0n8Nl2+nE+z5nA==}
+    engines: {node: '>=4'}
+    dependencies:
+      require-at: 1.0.6
     dev: false
 
   /os-locale/5.0.0:
@@ -3549,6 +3628,11 @@ packages:
     resolution: {integrity: sha512-OVede/NQE13xBQ+ob5CKd5KyeJYU2YInb1bmV4nRoOfquZPkAkxuOXicSe1PvqIuZZ4kD13sPKBbR7UFDmli6w==}
     dev: true
 
+  /require-at/1.0.6:
+    resolution: {integrity: sha512-7i1auJbMUrXEAZCOQ0VNJgmcT2VOKPRl2YGJwgpHpC9CE91Mv4/4UYIUm4chGJaI381ZDq1JUicFii64Hapd8g==}
+    engines: {node: '>=4'}
+    dev: false
+
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -3600,6 +3684,15 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  /saslprep/1.0.3:
+    resolution: {integrity: sha512-/MY/PEMbk2SuY5sScONwhUDsV2p77Znkb/q3nSVstq/yQzYJOH/Azh29p9oJLsl3LnQwSvZDKagDGBsBwSooag==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      sparse-bitfield: 3.0.3
+    dev: false
+    optional: true
 
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
@@ -3765,6 +3858,13 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /sparse-bitfield/3.0.3:
+    resolution: {integrity: sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ==}
+    dependencies:
+      memory-pager: 1.5.0
+    dev: false
+    optional: true
 
   /sprintf-js/1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
